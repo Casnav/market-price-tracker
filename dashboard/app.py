@@ -7,12 +7,16 @@ import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
 
 def get_engine():
+    server   = os.getenv("SERVER")
+    database = os.getenv("DATABASE")
+    driver   = os.getenv("DRIVER").replace(" ", "+")
     connection_url = (
-        "mssql+pyodbc://DESKTOP-RF3MTOQ/market_tracker"
-        "?driver=ODBC+Driver+17+for+SQL+Server"
-        "&trusted_connection=yes"
+        f"mssql+pyodbc://{server}/{database}"
+        f"?driver={driver}"
+        f"&trusted_connection=yes"
     )
     return create_engine(connection_url)
 
