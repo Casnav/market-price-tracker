@@ -1,11 +1,12 @@
 import pyodbc
 import os
+from dotenv import load_dotenv
 # --------------------------------
 #   SQL SERVER CONNECTION CONFIG
 # --------------------------------
-SERVER = 'DESKTOP-RF3MTOQ'
-DATABASE = 'market_tracker'
-DRIVER = 'ODBC Driver 17 for SQL Server'
+SERVER   = os.getenv("SERVER")
+DATABASE = os.getenv("DATABASE")
+DRIVER   = os.getenv("DRIVER")
 
 def get_connection():
     """Retorna una conexión a la base de datos SQLite"""
