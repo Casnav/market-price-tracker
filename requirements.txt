@@ -1,0 +1,10 @@
+yfinance==1.4.1
+selenium
+pyodbc
+sqlalchemy
+pandas
+apscheduler
+streamlit
+plotly
+python-dotenv
+webdriver-manager
